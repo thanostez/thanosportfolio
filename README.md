@@ -31,7 +31,7 @@ The portfolio is built using a portable vanilla stack. No build step is required
    ```bash
    git clone https://github.com/thanostez/thanosportfolio.git
    ```
-2. Open `index.html` in any modern web browser.
+2. Open `index.html` in any modern web browser..
 
 ### Configuring the Contact Form
 To receive messages in your inbox:
