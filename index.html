@@ -152,6 +152,10 @@
       width: 100%;
     }
 
+    .nav-links a.active {
+      color: var(--neon-cyan);
+    }
+
     .nav-status {
       display: flex;
       align-items: center;
@@ -926,6 +930,135 @@
       transform: scaleX(1);
     }
 
+    /* APKS / DOWNLOADS */
+    #apps {
+      background: rgba(10, 15, 30, 0.4);
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .app-card {
+      background: var(--dark-card);
+      border: 1px solid rgba(0, 245, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, var(--neon-cyan), var(--neon-purple));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .app-card:hover {
+      border-color: rgba(0, 245, 255, 0.3);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -20px rgba(0, 245, 255, 0.15);
+    }
+
+    .app-card:hover::before {
+      opacity: 1;
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(0, 245, 255, 0.05);
+      border: 1px solid rgba(0, 245, 255, 0.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--neon-cyan);
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.1);
+      flex-shrink: 0;
+    }
+
+    .app-meta {
+      flex: 1;
+    }
+
+    .app-name {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .app-subtext {
+      font-size: 0.65rem;
+      color: var(--neon-pink);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .app-desc {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .app-actions {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-download {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.7rem 1.2rem;
+      background: rgba(0, 245, 255, 0.08);
+      border: 1px solid rgba(0, 245, 255, 0.3);
+      color: var(--neon-cyan);
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transition: all 0.3s;
+    }
+
+    .btn-download:hover {
+      background: var(--neon-cyan);
+      color: #000;
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+    }
+
+    .app-size {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-family: 'Space Mono', monospace;
+    }
+
     /* EXPERIENCE */
     .timeline {
       position: relative;
@@ -1609,6 +1742,10 @@
       <span class="mnav-icon">◷</span>
       <span class="mnav-label">Exp</span>
     </a>
+    <a href="#apps" class="mnav-item" data-section="apps" id="mn-apps">
+      <span class="mnav-icon">📲</span>
+      <span class="mnav-label">Apps</span>
+    </a>
     <a href="#contact" class="mnav-item" data-section="contact" id="mn-contact">
       <span class="mnav-icon">✉</span>
       <span class="mnav-label">Contact</span>
@@ -1622,6 +1759,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#apps">Apps</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -2148,11 +2286,66 @@
       </div>
     </div>
   </section>
+  
+  <!-- APPS -->
+  <section id="apps">
+    <div class="section-wrap">
+      <div class="section-label">04 // APK Downloads</div>
+      <h2 class="section-title reveal">Mobile Applications</h2>
+      <div class="apps-grid">
+        
+        <!-- App 1 -->
+        <div class="app-card reveal">
+          <div class="app-header">
+            <div class="app-icon">🛠️</div>
+            <div class="app-meta">
+              <div class="app-name">Toolzy Pro</div>
+              <div class="app-subtext">Utility · v2.1.0</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            A comprehensive suite of developer tools and system utilities. Features include network diagnostic tools, 
+            secure password generation, and real-time system monitoring.
+          </p>
+          <div class="app-actions">
+            <span class="app-size">66.3 MB</span>
+            <a href="apk/toolzy.apk" class="btn-download" download>
+              <span>Download APK</span>
+              <span>💾</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- App 2 -->
+        <div class="app-card reveal" style="transition-delay:0.1s;">
+          <div class="app-header">
+            <div class="app-icon">🛡️</div>
+            <div class="app-meta">
+              <div class="app-name">Fokus</div>
+              <div class="app-subtext">Productivity · v3.0.5</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Privacy-first task manager and focus timer. Syncs across all your devices using encrypted cloud storage 
+            to keep your productivity data safe and private.
+          </p>
+          <div class="app-actions">
+            <span class="app-size">60.8 MB</span>
+            <a href="apk/fokus.apk" class="btn-download" download>
+              <span>Download APK</span>
+              <span>💾</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="section-wrap">
-      <div class="section-label">04 // Experience</div>
+      <div class="section-label">05 // Experience</div>
       <h2 class="section-title reveal">Career Timeline</h2>
       <div class="timeline">
 
@@ -2246,7 +2439,7 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="section-wrap">
-      <div class="section-label">05 // Contact</div>
+      <div class="section-label">06 // Contact</div>
       <div class="contact-wrap">
         <h2 class="section-title reveal">Let's Build Together.</h2>
         <p class="contact-intro reveal">
@@ -2385,22 +2578,31 @@
 
     // MOBILE NAV ACTIVE STATE
     (function () {
-      const sections = ['hero', 'about', 'skills', 'projects', 'experience', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'projects', 'apps', 'experience', 'contact'];
       const mItems = {};
       sections.forEach(id => { mItems[id] = document.getElementById('mn-' + (id === 'experience' ? 'exp' : id)); });
-      function updateMobileNav() {
+      const dLinks = document.querySelectorAll('.nav-links a');
+      function updateNavStates() {
         let current = 'hero';
         sections.forEach(id => {
           const el = document.getElementById(id);
           if (el && window.scrollY >= el.offsetTop - 120) current = id;
         });
+        
+        // Mobile Nav
         sections.forEach(id => {
           const item = mItems[id];
           if (item) item.classList.toggle('active', id === current);
         });
+
+        // Desktop Nav
+        dLinks.forEach(link => {
+          const href = link.getAttribute('href').substring(1);
+          link.classList.toggle('active', href === current);
+        });
       }
-      window.addEventListener('scroll', updateMobileNav, { passive: true });
-      updateMobileNav();
+      window.addEventListener('scroll', updateNavStates, { passive: true });
+      updateNavStates();
     })();
 
     // CONTACT FORM — Formspree AJAX
