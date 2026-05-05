@@ -1001,6 +1001,27 @@
       flex: 1;
     }
 
+    .app-preview {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 245, 255, 0.1);
+      background: #050a18;
+      margin-bottom: 0.5rem;
+    }
+
+    .app-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .app-card:hover .app-preview img {
+      transform: scale(1.05);
+    }
+
     .app-name {
       font-family: 'Orbitron', monospace;
       font-size: 1.1rem;
@@ -1831,7 +1852,7 @@
               <span class="stat-lbl">Years Exp.</span>
             </div>
             <div class="stat-card">
-              <span class="stat-num">7</span>
+              <span class="stat-num">8</span>
               <span class="stat-lbl">Live Apps</span>
             </div>
             <div class="stat-card">
@@ -2294,14 +2315,42 @@
       <h2 class="section-title reveal">Mobile Applications</h2>
       <div class="apps-grid">
         
-        <!-- App 1 -->
+        <!-- DripJudge AI -->
         <div class="app-card reveal">
+          <div class="app-header">
+            <div class="app-icon">👟</div>
+            <div class="app-meta">
+              <div class="app-name">DripJudge AI</div>
+              <div class="app-subtext">Fashion AI · v1.0.0</div>
+            </div>
+          </div>
+          <div class="app-preview">
+            <img src="assets/dripjudge.png" alt="DripJudge AI Preview" loading="lazy">
+          </div>
+          <p class="app-desc">
+            The ultimate AI fashion utility. Get instant ratings on your outfits, match your style with celebrities, 
+            and refine your 'drip' with professional-grade style analysis.
+          </p>
+          <div class="app-actions">
+            <span class="app-size">49.9 MB</span>
+            <a href="apk/DripJudgeAi.apk" class="btn-download" download>
+              <span>Download APK</span>
+              <span>💾</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- App 1 -->
+        <div class="app-card reveal" style="transition-delay:0.1s;">
           <div class="app-header">
             <div class="app-icon">🛠️</div>
             <div class="app-meta">
               <div class="app-name">Toolzy Pro</div>
               <div class="app-subtext">Utility · v2.1.0</div>
             </div>
+          </div>
+          <div class="app-preview">
+            <img src="assets/toolzy.png" alt="Toolzy Pro Preview" loading="lazy">
           </div>
           <p class="app-desc">
             A comprehensive suite of developer tools and system utilities. Features include network diagnostic tools, 
@@ -2317,13 +2366,16 @@
         </div>
 
         <!-- App 2 -->
-        <div class="app-card reveal" style="transition-delay:0.1s;">
+        <div class="app-card reveal" style="transition-delay:0.2s;">
           <div class="app-header">
             <div class="app-icon">🛡️</div>
             <div class="app-meta">
               <div class="app-name">Fokus</div>
               <div class="app-subtext">Productivity · v3.0.5</div>
             </div>
+          </div>
+          <div class="app-preview">
+            <img src="assets/fokus.png" alt="Fokus Preview" loading="lazy">
           </div>
           <p class="app-desc">
             Privacy-first task manager and focus timer. Syncs across all your devices using encrypted cloud storage 
