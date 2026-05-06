@@ -8,7 +8,7 @@ A high-performance, single-page developer portfolio designed with a futuristic *
 
 - **Cyberpunk Aesthetics**: Dark-themed UI with neon accents (Cyan, Pink, Green, Purple) and glassmorphism components.
 - **Mobile-First Experience**: Fully responsive layout with a modern, glassy **Bottom Navigation Bar** for mobile users.
-- **9× Live Project Showcases**: Featuring 10+ Telegram bots, Web3 platforms, and security tools with real-time screenshot previews.
+- **8× Live Project Showcases**: Featuring 10+ Telegram bots, Web3 platforms, and security tools with real-time screenshot previews.
 - **Dedicated Apps Section**: Integrated APK download section for mobile utilities like DripJudge AI, Toolzy, and Fokus.
 - **Dynamic Skill Tracking**: Animated skill bars and tech-stack categorization.
 - **Integrated Contact System**: Production-ready contact form powered by **Formspree** with AJAX submission and live feedback.
